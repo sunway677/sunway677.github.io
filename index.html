@@ -46,7 +46,8 @@
     --shadow-lift:0 2px 4px rgba(16,24,40,.06), 0 14px 34px rgba(16,24,40,.10);
     --sans:'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     --slab:'Roboto Slab', Georgia, serif;
-    --max:860px;
+    --max:1120px;
+    --measure:58ch;   /* comfortable reading width for running text */
   }
 
   @media (prefers-color-scheme: dark){
@@ -173,14 +174,15 @@
     100% { box-shadow:0 0 0 0 rgba(46,92,138,0); }
   }
 
-  .hero-flex{ display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap; margin:22px 0; }
-  .hero-flex .bio{ flex:1 1 340px; min-width:280px; }
+  .hero-flex{ display:flex; gap:48px; align-items:flex-start; flex-wrap:wrap; margin:22px 0; }
+  .hero-left{ flex:1 1 340px; min-width:280px; max-width:var(--measure); }
+  .hero-flex .avatar{ margin-left:auto; }
   .bio p{ margin:0 0 14px; font-size:15.5px; }
   .bio p:last-child{ margin-bottom:0; }
   .bio strong{ font-weight:500; color:var(--ink); }
 
   .avatar{
-    width:235px; height:235px; border-radius:12px;
+    width:280px; height:280px; border-radius:12px;
     object-fit:cover;
     background:var(--accent-bg);
     flex:0 0 auto;
@@ -202,7 +204,7 @@
   }
   :root[data-theme="dark"] .social-row a:hover{ color:#15171C; }
   .social-row svg{ width:24px; height:24px; }
-  .social-note{ font-size:13px; color:var(--ink-faint); margin:0 0 26px; }
+  .social-note{ font-size:13px; color:var(--ink-faint); margin:0; }
 
   /* ---------- sections ---------- */
   section{ padding:38px 0; border-top:1px solid var(--line); scroll-margin-top:78px; }
@@ -261,7 +263,9 @@
   .pub-figure img{
     width:100%; height:auto; display:block; border-radius:4px;
   }
-  .pub-card-body{ display:grid; grid-template-columns:78px 1fr; gap:18px; }
+  /* figure spans the full card, but the citation text keeps a readable measure */
+  .pub-card-body{ display:grid; grid-template-columns:78px minmax(0,1fr); gap:18px; }
+  .pub-card-body > div:last-child{ max-width:66ch; }
   .pub-row{
     display:grid; grid-template-columns:78px 1fr; gap:18px;
     padding:15px 0; border-bottom:1px solid var(--line);
@@ -298,7 +302,7 @@
   .item-sub{ font-size:13.5px; color:var(--ink-soft); margin:0 0 2px; }
   .item-meta{ font-size:12.5px; color:var(--ink-faint); }
 
-  .venue-list{ font-size:13.5px; color:var(--ink-soft); margin:0 0 20px; }
+  .venue-list{ font-size:13.5px; color:var(--ink-soft); margin:0 0 20px; max-width:var(--measure); }
 
   footer{ padding:34px 0 60px; text-align:center; border-top:1px solid var(--line); }
   footer p{ font-size:12.5px; color:var(--ink-faint); margin:0; }
@@ -383,14 +387,13 @@
     <div class="status"><span class="dot"></span>Seeking tenure-track faculty positions · Expected graduation 2027</div>
 
     <div class="hero-flex">
+      <div class="hero-left">
       <div class="bio">
         <p>I am a Ph.D. candidate in Computer Science at Old Dominion University, advised by <a href="https://sites.google.com/view/lusili/" target="_blank" rel="noopener">Prof. Lusi Li</a>. My research centers on energy-based models for robust representation learning, with applications to multi-view clustering, semantic communication, and AI security — including the robustness of vision-language pre-trained models under adversarial perturbation.</p>
         <p>I am broadly interested in building learning systems that stay reliable when data is incomplete, noisy, or adversarial.</p>
       </div>
-      <img class="avatar" src="profile.png" alt="Ziyu Wang" width="235" height="235">
-    </div>
 
-    <div class="social-row">
+      <div class="social-row">
       <a href="mailto:zwang007@odu.edu" title="Email" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
       </a>
@@ -400,8 +403,11 @@
       <a href="https://github.com/sunway677" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
       </a>
+      </div>
+      <p class="social-note">Norfolk / Virginia Beach, VA, USA · Best reached by email</p>
+      </div>
+      <img class="avatar" src="profile.png" alt="Ziyu Wang" width="280" height="280">
     </div>
-    <p class="social-note">Norfolk / Virginia Beach, VA, USA · Best reached by email</p>
   </header>
 
   <section id="publications" class="reveal">
@@ -510,7 +516,7 @@
 
   <section id="service" class="reveal">
     <h2>Service</h2>
-    <div style="max-width:520px;">
+    <div style="max-width:var(--measure);">
       <p class="item-title" style="margin-bottom:8px;">Journal Reviewer</p>
       <p class="venue-list">IEEE Transactions on Neural Networks and Learning Systems · IEEE Transactions on Image Processing · IEEE Internet of Things Journal · IEEE Transactions on Consumer Electronics · IEEE Transactions on Multimedia · ACM Transactions on Knowledge Discovery from Data · Neural Networks (Elsevier) · Information Fusion (Elsevier) · Image and Vision Computing (Elsevier) · Expert Systems with Applications (Elsevier)</p>
       <p class="item-title" style="margin-bottom:8px;">Conference Reviewer</p>
