@@ -41,7 +41,7 @@
     --nav-bg:rgba(255,255,255,.88);
     --sans:'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     --slab:'Roboto Slab', Georgia, serif;
-    --max:860px;
+    --max:1120px;
   }
 
   @media (prefers-color-scheme: dark){
@@ -157,13 +157,14 @@
   .pub-year-label::after{ content:''; flex:1; height:1px; background:var(--line); }
 
   .pub-row{
-    display:grid; grid-template-columns:82px 1fr; gap:18px;
+    display:grid; grid-template-columns:82px minmax(0,1fr); gap:18px;
     padding:16px 14px; margin:0 -14px;
     border-radius:10px;
     border-bottom:1px solid var(--line);
     transition:background-color .18s ease;
   }
   .pub-row:last-child{ border-bottom:none; }
+  .pub-row > div:last-child{ max-width:70ch; }
   .pub-row:hover{ background:var(--accent-bg); }
   .badge{
     font-family:var(--sans); font-size:10.5px; font-weight:500;
