@@ -171,8 +171,7 @@
     70% { box-shadow:0 0 0 7px rgba(var(--accent-rgb),0); }
     100%{ box-shadow:0 0 0 0 rgba(var(--accent-rgb),0); }
   }
-  .bio{ max-width:var(--measure); }
-  .bio p{ margin:0 0 14px; font-size:16px; color:var(--ink); }
+  .bio p{ margin:0 0 14px; font-size:18px; line-height:1.7; color:var(--ink); text-wrap:pretty; }
   .bio p:last-child{ margin-bottom:0; }
 
   /* ---------- publication cards ---------- */
@@ -236,7 +235,7 @@
   .item-title{ font-weight:600; font-size:15.5px; color:var(--ink); margin:0 0 2px; }
   .item-sub{ font-size:15px; color:var(--ink-soft); margin:0 0 2px; }
   .item-meta{ font-size:14px; color:var(--ink-faint); margin:2px 0 0; }
-  .venue-list{ font-size:15px; color:var(--ink-soft); margin:0 0 20px; max-width:var(--measure); }
+  .venue-list{ font-size:15px; color:var(--ink-soft); margin:0 0 20px; text-wrap:pretty; }
 
   .foot{ border-top:1px solid var(--line); margin-top:20px; }
   .foot p{ max-width:var(--max); margin:0 auto; padding:26px 28px 56px; font-size:13.5px; color:var(--ink-faint); text-align:center; }
@@ -267,7 +266,7 @@
     .links .sep{ display:none; }
     .links a:hover{ transform:none; }
     .main{ padding-top:30px; }
-    .bio{ max-width:none; }
+    .bio p{ font-size:17px; }
   }
   @media (max-width:560px){
     .pub-card{ padding:16px; }
@@ -333,9 +332,9 @@
 
     <section id="about">
       <h2>About</h2>
-      <div class="status"><span class="dot"></span>Seeking tenure-track faculty positions · Expected graduation May 2027</div>
+      <div class="status"><span class="dot"></span>Seeking tenure-track faculty positions&nbsp;· Expected&nbsp;graduation&nbsp;May&nbsp;2027</div>
       <div class="bio">
-        <p>I am a Ph.D. candidate in Computer Science at Old Dominion University, advised by <a href="https://sites.google.com/view/lusili/" target="_blank" rel="noopener">Prof. Lusi Li</a>. My research centers on energy-based models for robust representation learning, with applications to multi-view clustering, semantic communication, and AI security — including the robustness of vision-language pre-trained models under adversarial perturbation.</p>
+        <p>I am a Ph.D. candidate in Computer Science at Old Dominion University, advised by <a href="https://sites.google.com/view/lusili/" target="_blank" rel="noopener">Prof. Lusi Li</a>. My research centers on energy-based models for robust representation learning, with applications to multi-view clustering, semantic communication, and AI security&nbsp;— including the robustness of vision-language pre-trained models under adversarial perturbation.</p>
         <p>I am broadly interested in building learning systems that stay reliable when data is incomplete, noisy, or adversarial.</p>
       </div>
     </section>
@@ -450,11 +449,11 @@
 
     <section id="service" class="reveal">
       <h2>Service</h2>
-      <div style="max-width:var(--measure);">
+      <div>
       <p class="item-title" style="margin-bottom:8px;">Journal Reviewer</p>
-      <p class="venue-list">IEEE Transactions on Neural Networks and Learning Systems · IEEE Transactions on Image Processing · IEEE Internet of Things Journal · IEEE Transactions on Consumer Electronics · IEEE Transactions on Multimedia · ACM Transactions on Knowledge Discovery from Data · Neural Networks (Elsevier) · Information Fusion (Elsevier) · Image and Vision Computing (Elsevier) · Expert Systems with Applications (Elsevier)</p>
+      <p class="venue-list">IEEE Transactions on Neural Networks and Learning Systems&nbsp;· IEEE Transactions on Image Processing&nbsp;· IEEE Internet of Things Journal&nbsp;· IEEE Transactions on Consumer Electronics&nbsp;· IEEE Transactions on Multimedia&nbsp;· ACM Transactions on Knowledge Discovery from Data&nbsp;· Neural Networks&nbsp;(Elsevier)&nbsp;· Information Fusion&nbsp;(Elsevier)&nbsp;· Image and Vision Computing&nbsp;(Elsevier)&nbsp;· Expert Systems with Applications&nbsp;(Elsevier)</p>
       <p class="item-title" style="margin-bottom:8px;">Conference Reviewer</p>
-      <p class="venue-list" style="margin-bottom:0;">AAAI Conference on Artificial Intelligence · ACM International Conference on Multimedia (ACM MM)</p>
+      <p class="venue-list" style="margin-bottom:0;">AAAI Conference on Artificial Intelligence&nbsp;· ACM International Conference on Multimedia&nbsp;(ACM MM)</p>
     </div>
     </section>
 
