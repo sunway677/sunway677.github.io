@@ -230,6 +230,18 @@
   .pub-year-label:first-child{ margin-top:0; }
   .pub-year-label::after{ content:''; flex:1; height:1px; background:var(--line); }
 
+  /* ---------- news ---------- */
+  .news{ list-style:none; margin:0; padding:0; }
+  .news li{ display:grid; grid-template-columns:78px minmax(0,1fr); column-gap:18px; align-items:baseline; margin:0 0 12px; }
+  .news li:last-child{ margin-bottom:0; }
+  .news-date{ font-size:14.5px; font-weight:600; color:var(--ink-faint); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .news p{ margin:0; font-size:16px; line-height:1.6; color:var(--ink); text-wrap:pretty; }
+  .news strong{ font-weight:650; }
+  .pub-row{ scroll-margin-top:84px; }
+  .pub-row:target{ background:var(--accent-bg); }
+  @media (max-width:900px){ .pub-row{ scroll-margin-top:120px; } }
+  @media (max-width:560px){ .news li{ grid-template-columns:1fr; row-gap:2px; } }
+
   /* ---------- simple items ---------- */
   .item{ margin-bottom:18px; }
   .item:last-child{ margin-bottom:0; }
@@ -333,9 +345,20 @@
     <h1 class="page-title">Publications</h1>
     <p class="page-sub">Full list, newest first. <a href="https://scholar.google.com/citations?user=qltpApAAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Google Scholar →</a></p>
     <section>
-      <p class="pub-year-label">2026</p>
+      <p class="pub-year-label">2027</p>
 
-    <div class="pub-row">
+    <div class="pub-row" id="kdd27">
+      <div class="badge">KDD</div>
+      <div>
+        <p class="pub-title">Energy-based Reference Distribution Learning for Graph-level Open-World Classification</p>
+        <p class="pub-authors">H. Lian, <span class="me">Z. Wang</span>, L. Li, X. Zhu, Y. He</p>
+        <p class="pub-meta">ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), Research Track · 2027</p>
+      </div>
+    </div>
+
+    <p class="pub-year-label">2026</p>
+
+    <div class="pub-row" id="retuap">
       <div class="badge">INFFUS</div>
       <div>
         <p class="pub-title">ReT-UAP: Rethinking Multi-Surrogate Universal Adversarial Perturbations on Vision-Language Pre-trained Models</p>
@@ -353,7 +376,7 @@
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="semcom-uap">
       <div class="badge">IEEE CNS</div>
       <div>
         <p class="pub-title">SemCom-UAP: Universal Adversarial Perturbations Against Cross-Modal Retrieval in Semantic Communications</p>
@@ -362,7 +385,7 @@
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="milcom26">
       <div class="badge">MILCOM</div>
       <div>
         <p class="pub-title">Data-Efficient Universal Adversarial Perturbations for Cross-Modal Retrieval in Semantic Communications</p>
@@ -371,7 +394,16 @@
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="rosc">
+      <div class="badge">GLOBECOM</div>
+      <div>
+        <p class="pub-title">RoSC: Robust Semantic Communication for Cross-Modal Retrieval</p>
+        <p class="pub-authors">Y. Du, J. Li, <span class="me">Z. Wang</span>, M. Ibrahim, R. Ning, D. Takabi, S. Hao, L. Li</p>
+        <p class="pub-meta">IEEE Global Communications Conference (GLOBECOM) · 2026</p>
+      </div>
+    </div>
+
+    <div class="pub-row" id="diffsem-bd">
       <div class="badge">GLOBECOM</div>
       <div>
         <p class="pub-title">DiffSem-BD: Text-Triggered Backdoor Attacks on Diffusion-Driven Semantic Communications</p>
@@ -394,7 +426,7 @@
       <div>
         <p class="pub-title">Elasticity-Aware Neural Hamiltonian Fields for Dynamic 3D Vision Synthesis</p>
         <p class="pub-authors">W. Tan, <span class="me">Z. Wang</span>, S. B. Hakim, A. Velasquez, L. Li, H. Song</p>
-        <p class="pub-meta">Pattern Recognition, 114231 · 2026</p>
+        <p class="pub-meta">Pattern Recognition, vol. 180, 114231 · 2026</p>
       </div>
     </div>
 
@@ -461,7 +493,7 @@
     <div class="pub-row">
       <div class="badge">FUZZ-IEEE</div>
       <div>
-        <p class="pub-title">Noisecam: Explainable AI for the Boundary between Noise and Adversarial Attacks</p>
+        <p class="pub-title">NoiseCAM: Explainable AI for the Boundary between Noise and Adversarial Attacks</p>
         <p class="pub-authors">W. Tan, J. Renkhoff, A. Velasquez, <span class="me">Z. Wang</span>, L. Li, J. Wang, S. Niu, F. Yang, Y. Liu, H. Song</p>
         <p class="pub-meta">IEEE Int'l Conference on Fuzzy Systems, pp. 1–8 · 2023</p>
       </div>
